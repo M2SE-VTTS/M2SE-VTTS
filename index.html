@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Multi-modal and Multi-scale Spatial Environment Understanding for Immersive Visual Text-to-Speech">
+  <meta property="og:title" content="Multi-modal and Multi-scale Spatial Environment Understanding for Immersive Visual Text-to-Speech"/>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">    
+  
+  <title>Multi-modal and Multi-scale Spatial Environment Understanding for Immersive Visual Text-to-Speech</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/audio-table.css">
+  <link rel="stylesheet" type="text/css" href="static/css/dropdown_style.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Multi-modal and Multi-scale Spatial Environment Understanding for Immersive Visual Text-to-Speech</h1>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	  
+	<section class="section hero is-light">
+	    <div class="container is-max-desktop">
+	      <!-- Abstract. -->
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-3">Abstract</h2>
+					<div class="content has-text-justified">
+						  Visual Text-to-Speech (VTTS) aims to take the environmen-
+						  tal image as the prompt to synthesize the reverberation speech
+						  for the spoken content. The challenge of this task lies in un-
+						  derstanding the spatial environment from the image. Many
+						  attempts have been made to extract global spatial visual in-
+						  formation from the RGB space of an image. However, lo-
+						  cal and depth image information are crucial for understand-
+						  ing the spatial environment, which previous works have ig-
+						  nored. To address the issues, we propose a novel multi-modal
+						  and multi-scale spatial environment understanding scheme to
+						  achieve immersive VTTS, termed M2SE-VTTS. The multi-
+						  modal aims to take both the RGB and Depth space to learn
+						  more comprehensive spatial information, and the multi-scale
+						  seeks to model the local and global spatial knowledge simul-
+						  taneously. Specifically, we first split the RGB and Depth im-
+						  age into patch-level and adopt the Gemini-generated environ-
+						  ment caption to guide the local spatial understanding. After
+						  that, the multi-modal and multi-scale features are integrated
+						  by the local-aware global spatial understanding. In this way,
+						  M2SE-VTTS effectively models the interactions between lo-
+						  cal and global spatial contexts in the multi-modal spatial en-
+						  vironment. Objective and subjective evaluations suggest that
+						  our model outperforms the advanced baselines in environ-
+						  mental speech generation. The code and audio samples are
+						  available at: https://github.com/M2SE-VTTS/M2SE-VTTS.
+						<p></p>
+					</div>
+				</div>
+			</div>
+	      <!--/ Abstract. -->
+	    </div>、
+		<div class="columns is-centered has-text-centered">
+			<div class="column is-four-fifths">
+				<h2 class="title is-3">MODEL ARCHITECTURE</h2>
+			</div>
+		</div>
+		<img src="./Supplementary_Material/model.png" alt="" style="width:60%; height:auto; display: block; margin: 0 auto;">
+
+
+	</section>
+
+
+
+
+	  <section class="hero">
+		  <div class="hero-body">
+			  <div class="container">
+		<h4 class="title is-4">Test-Seen</h4>
+		<div class="grid-container">
+			<table >
+
+            
+				<tr >
+					<th>Systems</th>
+					<th>Recording</th>
+					<th> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350"><span  style="color: #1d5da4; ">DiffSpeech[1]</span></a></th>
+					<th> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3547855"><span  style="color: #1d5da4; ">ProDiff[2]</span></a></th>
+					<th> <a href="https://arxiv.org/pdf/2309.13664"><span  style="color: #1d5da4; ">VoiceLDM[3]</span></a> </th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-ResNet18[4]</span></a></th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-CLIP-ViT[4]</span></a></th>
+					<th>M2SE-VTTS (ours)</th>
+<!-- 					<th> </th> -->
+				</tr>
+                <tr >
+					<th style=" vertical-align:middle;" width="10%">Sample 1: </th>
+                    <th style=" vertical-align:middle;">
+						<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/GT_VOC/2094-142345-0053.wav"          type="audio/wav"></audio>
+					<th style=" vertical-align:middle;">
+						<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/DiffSpeech/2094-142345-0053.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ProDiff/2094-142345-0053.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/Caption-TTS/2094-142345-0053.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ViT-TTS-Resnet18/2094-142345-0053.wav"          type="audio/wav"></audio>
+					</th>
+                    <th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ViT-TTS-CLIP/2094-142345-0053.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/MSE-VTTS/2094-142345-0053.wav"          type="audio/wav"></audio>
+					</th>
+				</tr>
+
+                <tr>
+                    <th style=" vertical-align:middle;"> Target RGB/Depth Image: </th>
+					<th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/2094-142345-0053.jpg" height="20">
+                    </th>
+                    <th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/2094-142345-0053_depth.jpg" height="20">
+                    </th>
+                </tr>
+				
+				<tr>
+                    <th style=" vertical-align:middle;"> Target RGB/Depth Image Tok-k Patch Display: </th>
+					<th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/patch/2094-142345-0053.png" style="width:85%; height:auto; display: block; margin: 0 auto;" >
+                    </th>
+                    <th style=" vertical-align:middle;" colspan="3">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/patch/2094-142345-005_depth.png" style="width:100%; height:auto; display: block; margin: 0 auto;">
+                    </th>
+                </tr>
+				
+				<tr > 
+					<th style=" vertical-align:middle;"> Reference Text: </th>
+                    <td colspan="7" style=" vertical-align:middle;">for if hes anywhere on the farm we can send for him in a minute</td>
+                
+				</tr>
+				<tr >
+					<th style=" vertical-align:middle;"> Caption Text: </th>
+				    <td colspan="7" style=" vertical-align:middle;">  The image shows a living room and a dining room. There are two sofas, a coffee table, a TV, a dining table with chairs, and a hutch in the living room.</td>
+				</tr>
+				<tr >
+					<th>Systems</th>
+					<th>Recording</th>
+					<th> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350"><span  style="color: #1d5da4; ">DiffSpeech[1]</span></a></th>
+					<th> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3547855"><span  style="color: #1d5da4; ">ProDiff[2]</span></a></th>
+					<th> <a href="https://arxiv.org/pdf/2309.13664"><span  style="color: #1d5da4; ">VoiceLDM[3]</span></a> </th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-ResNet18[4]</span></a></th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-CLIP-ViT[4]</span></a></th>
+					<th>M2SE-VTTS (ours)</th>
+				</tr>
+                <tr >
+					<th style=" vertical-align:middle;" width="10%">Sample 2: </th>
+                    <th style=" vertical-align:middle;">
+						<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/GT_VOC/6829-68769-0019.wav"          type="audio/wav"></audio>
+					<th style=" vertical-align:middle;">
+						<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/DiffSpeech/6829-68769-0019.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ProDiff/6829-68769-0019.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/Caption-TTS/6829-68769-0019.wav"          type="audio/wav"></audio>
+					</th>
+			<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ViT-TTS-Resnet18/6829-68769-0019.wav"          type="audio/wav"></audio>
+					</th>
+                    <th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ViT-TTS-CLIP/6829-68769-0019.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/MSE-VTTS/6829-68769-0019.wav"          type="audio/wav"></audio>
+					</th>
+				</tr>
+
+                <tr>
+                    <th style=" vertical-align:middle;"> Target RGB/Depth Image: </th>
+					<th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/6829-68769-0019.jpg" height="20">
+                    </th>
+                    <th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/6829-68769-0019_depth.jpg" height="20">
+                    </th>
+                </tr>
+				
+				<tr>
+					<th style=" vertical-align:middle;"> Target RGB/Depth Image Tok-k Patch Display: </th>
+					<th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/patch/6829-68769-0019.png" style="width:85%; height:auto; display: block; margin: 0 auto;" >
+					</th>
+					<th style=" vertical-align:middle;" colspan="3">
+						<img  src="Supplementary_Material/Performance/Test-Seen/imgs/patch/6829-68769-0019_depth.png" style="width:100%; height:auto; display: block; margin: 0 auto;">
+					</th>
+				</tr>
+
+				<tr > 
+					<th style=" vertical-align:middle;"> Reference Text: </th>
+                    <td colspan="7" style=" vertical-align:middle;">sorry we havent any reception room in the jail</td>
+                
+				</tr>
+				<tr >
+					<th style=" vertical-align:middle;"> Caption Text: </th>
+				    <td colspan="7" style=" vertical-align:middle;"> The image shows a woman in a white shirt and black pants walking in an art studio. There are paintings on the walls and sculptures on the floor.</td>
+				</tr>
+				<tr >
+					<th>Systems</th>
+					<th>Recording</th>
+					<th> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350"><span  style="color: #1d5da4; ">DiffSpeech[1]</span></a></th>
+					<th> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3547855"><span  style="color: #1d5da4; ">ProDiff[2]</span></a></th>
+					<th> <a href="https://arxiv.org/pdf/2309.13664"><span  style="color: #1d5da4; ">VoiceLDM[3]</span></a> </th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-ResNet18[4]</span></a></th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-CLIP-ViT[4]</span></a></th>
+					<th>M2SE-VTTS (ours)</th>
+				</tr>
+			<tr >
+				<th style=" vertical-align:middle;" width="10%">Sample 3: </th>
+			    <th style=" vertical-align:middle;">
+					<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/GT_VOC/8455-210777-0070.wav"          type="audio/wav"></audio>
+				<th style=" vertical-align:middle;">
+					<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/DiffSpeech/8455-210777-0070.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ProDiff/8455-210777-0070.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/Caption-TTS/8455-210777-0070.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ViT-TTS-Resnet18/8455-210777-0070.wav"          type="audio/wav"></audio>
+				</th>
+			    <th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/ViT-TTS-CLIP/8455-210777-0070.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Seen/MSE-VTTS/8455-210777-0070.wav"          type="audio/wav"></audio>
+				</th>
+			</tr>
+			
+			<tr>
+			    <th style=" vertical-align:middle;"> Target RGB/Depth Image: </th>
+				<th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Seen/imgs/8455-210777-0070.jpg" height="20">
+			    </th>
+			    <th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Seen/imgs/8455-210777-0070_depth.jpg" height="20">
+			    </th>
+			</tr>
+			
+			<tr>
+				<th style=" vertical-align:middle;"> Target RGB/Depth Image Tok-k Patch Display: </th>
+				<th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Seen/imgs/patch/8455-210777-0070.png" style="width:85%; height:auto; display: block; margin: 0 auto;" >
+				</th>
+				<th style=" vertical-align:middle;" colspan="3">
+					<img  src="Supplementary_Material/Performance/Test-Seen/imgs/patch/8455-210777-0070_depth.png" style="width:100%; height:auto; display: block; margin: 0 auto;">
+				</th>
+			</tr>
+
+			
+			<tr > 
+				<th style=" vertical-align:middle;"> Reference Text: </th>
+			    <td colspan="7" style=" vertical-align:middle;">and this plan was adopted too in order to extract from me a promise that i would</td>
+			
+			</tr>
+			<tr >
+				<th style=" vertical-align:middle;"> Caption Text: </th>
+			    <td colspan="7" style=" vertical-align:middle;"> The image shows a room with white walls, brown wooden floors, and a bathroom with a toilet, sink, and shower. There are two closets and a small window.</td>
+			</tr>
+			</table>
+		</div>
+
+        <br>
+		
+<h4 class="title is-4">Test-Unseen</h4>
+		<div class="grid-container">
+			<table >
+				<tr >
+					<th>Systems</th>
+					<th>Recording</th>
+					<th> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350"><span  style="color: #1d5da4; ">DiffSpeech[1]</span></a></th>
+					<th> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3547855"><span  style="color: #1d5da4; ">ProDiff[2]</span></a></th>
+					<th> <a href="https://arxiv.org/pdf/2309.13664"><span  style="color: #1d5da4; ">VoiceLDM[3]</span></a> </th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-ResNet18[4]</span></a></th>
+					<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-CLIP-ViT[4]</span></a></th>
+					<th>M2SE-VTTS (ours)</th>
+				</tr>
+				<!-- <tr>
+					<th colspan="6" style="text-align:left">Sample 1: </th>
+				</tr> -->
+				<tr >
+					<th style=" vertical-align:middle;" width="10%">Sample 1: </th>
+				    <th style=" vertical-align:middle;">
+						<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/GT_VOC/1580-141083-0017.wav"          type="audio/wav"></audio>
+					<th style=" vertical-align:middle;">
+						<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/DiffSpeech/1580-141083-0017.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ProDiff/1580-141083-0017.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/Caption-TTS/1580-141083-0017.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ViT-TTS-Resnet18/1580-141083-0017.wav"          type="audio/wav"></audio>
+					</th>
+				    <th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ViT-TTS-CLIP/1580-141083-0017.wav"          type="audio/wav"></audio>
+					</th>
+					<th style=" vertical-align:middle;">
+						<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/MSE-VTTS/1580-141083-0017.wav"          type="audio/wav"></audio>
+					</th>
+				</tr>
+				
+				<tr>
+				    <th style=" vertical-align:middle;"> Target RGB/Depth Image: </th>
+					<th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/1580-141083-0017.jpg"20">
+				    </th>
+				    <th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/1580-141083-0017_depth.jpg" height="20">
+				    </th>
+				</tr>
+				
+				<tr>
+					<th style=" vertical-align:middle;"> Target RGB/Depth Image Tok-k Patch Display: </th>
+					<th style=" vertical-align:middle;" colspan="4">
+						<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/patch/1580-141083-0017.png" style="width:85%; height:auto; display: block; margin: 0 auto;" >
+					</th>
+					<th style=" vertical-align:middle;" colspan="3">
+						<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/patch/1580-141083-0017_depth.png" style="width:100%; height:auto; display: block; margin: 0 auto;">
+					</th>
+				</tr>
+				
+				<tr > 
+					<th style=" vertical-align:middle;"> Reference Text: </th>
+					<td colspan="7" style=" vertical-align:middle;">so it seems to me</td>
+					
+				</tr>
+				
+				<tr >
+					<th style=" vertical-align:middle;"> Caption Text: </th>
+				    <td colspan="7" style=" vertical-align:middle;"> The image shows a living room, dining room, and kitchen in an open floor plan. There is a woman standing in the center of the living room holding a clipboard.</td>
+				</tr>
+			<tr >
+				<th>Systems</th>
+				<th>Recording</th>
+				<th> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350"><span  style="color: #1d5da4; ">DiffSpeech[1]</span></a></th>
+				<th> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3547855"><span  style="color: #1d5da4; ">ProDiff[2]</span></a></th>
+				<th> <a href="https://arxiv.org/pdf/2309.13664"><span  style="color: #1d5da4; ">VoiceLDM[3]</span></a> </th>
+				<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-ResNet18[4]</span></a></th>
+				<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-CLIP-ViT[4]</span></a></th>
+				<th>M2SE-VTTS (ours)</th>
+			</tr>
+            <tr >
+            	<th style=" vertical-align:middle;" width="10%">Sample 2: </th>
+                <th style=" vertical-align:middle;">
+            		<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/GT_VOC/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	<th style=" vertical-align:middle;">
+            		<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/DiffSpeech/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	</th>
+            	<th style=" vertical-align:middle;">
+            		<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ProDiff/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	</th>
+            	<th style=" vertical-align:middle;">
+            		<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/Caption-TTS/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	</th>
+            	<th style=" vertical-align:middle;">
+            		<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ViT-TTS-Resnet18/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	</th>
+                <th style=" vertical-align:middle;">
+            		<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ViT-TTS-CLIP/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	</th>
+            	<th style=" vertical-align:middle;">
+            		<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/MSE-VTTS/2830-3979-0004.wav"          type="audio/wav"></audio>
+            	</th>
+            </tr>
+            
+            <tr>
+                <th style=" vertical-align:middle;"> Target RGB/Depth Image: </th>
+            	<th style=" vertical-align:middle;" colspan="4">
+            		<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/2830-3979-0004.jpg"20">
+                </th>
+                <th style=" vertical-align:middle;" colspan="4">
+            		<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/2830-3979-0004_depth.jpg" height="20">
+                </th>
+            </tr>
+            
+			<tr>
+				<th style=" vertical-align:middle;"> Target RGB/Depth Image Tok-k Patch Display: </th>
+				<th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/patch/2830-3979-0004.png" style="width:85%; height:auto; display: block; margin: 0 auto;" >
+				</th>
+				<th style=" vertical-align:middle;" colspan="3">
+					<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/patch/2830-3979-0004_depth.png" style="width:100%; height:auto; display: block; margin: 0 auto;">
+				</th>
+			</tr>
+			
+			
+			
+            <tr > 
+            	<th style=" vertical-align:middle;"> Reference Text: </th>
+            	<td colspan="7" style=" vertical-align:middle;">it was written in latin</td>
+            	
+            </tr>
+            <tr >
+            	<th style=" vertical-align:middle;"> Caption Text: </th>
+                <td colspan="7" style=" vertical-align:middle;">  The image shows a living room with a dining area. There is a large window in the living room and a fireplace in the dining area. 
+				The living room has two sofas, an armchair, a coffee table, and a TV. The dining area has a dining table with chairs.
+				</td>
+            </tr>
+
+			
+			<tr >
+				<th>Systems</th>
+				<th>Recording</th>
+				<th> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350"><span  style="color: #1d5da4; ">DiffSpeech[1]</span></a></th>
+				<th> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3547855"><span  style="color: #1d5da4; ">ProDiff[2]</span></a></th>
+				<th> <a href="https://arxiv.org/pdf/2309.13664"><span  style="color: #1d5da4; ">VoiceLDM[3]</span></a> </th>
+				<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-ResNet18[4]</span></a></th>
+				<th><a href="https://arxiv.org/pdf/2305.12708"><span  style="color: #1d5da4; ">ViT-TTS-CLIP-ViT[4]</span></a></th>
+				<th>M2SE-VTTS (ours)</th>
+			</tr>
+			<tr >
+				<th style=" vertical-align:middle;" width="10%">Sample 3: </th>
+			    <th style=" vertical-align:middle;">
+					<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/GT_VOC/7127-75946-0019.wav"          type="audio/wav"></audio>
+				<th style=" vertical-align:middle;">
+					<audio  controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/DiffSpeech/7127-75946-0019.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ProDiff/7127-75946-0019.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/Caption-TTS/7127-75946-0019.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ViT-TTS-Resnet18/7127-75946-0019.wav"          type="audio/wav"></audio>
+				</th>
+			    <th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/ViT-TTS-CLIP/7127-75946-0019.wav"          type="audio/wav"></audio>
+				</th>
+				<th style=" vertical-align:middle;">
+					<audio controls style="width: 150px;"><source src="Supplementary_Material/Performance/Test-Unseen/MSE-VTTS/7127-75946-0019.wav"          type="audio/wav"></audio>
+				</th>
+			</tr>
+			
+			<tr>
+			    <th style=" vertical-align:middle;"> Target RGB/Depth Image: </th>
+				<th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/7127-75946-0019.jpg"20">
+			    </th>
+			    <th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/7127-75946-0019_depth.jpg" height="20">
+			    </th>
+			</tr>
+			
+			<tr>
+				<th style=" vertical-align:middle;"> Target RGB/Depth Image Tok-k Patch Display: </th>
+				<th style=" vertical-align:middle;" colspan="4">
+					<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/patch/7127-75946-0019.png" style="width:85%; height:auto; display: block; margin: 0 auto;" >
+				</th>
+				<th style=" vertical-align:middle;" colspan="3">
+					<img  src="Supplementary_Material/Performance/Test-Unseen/imgs/patch/7127-75946-0019_depth.png" style="width:100%; height:auto; display: block; margin: 0 auto;">
+				</th>
+			</tr>
+			
+			<tr > 
+				<th style=" vertical-align:middle;"> Reference Text: </th>
+				<td colspan="7" style=" vertical-align:middle;">yes it is suppressed</td>
+				
+			</tr>
+			<tr >
+				<th style=" vertical-align:middle;"> Caption Text: </th>
+			    <td colspan="7" style=" vertical-align:middle;">   The image shows a backyard with a green lawn, a swimming pool, and a few trees. There is a fence on one side of the yard and a house on the other. A person is standing in the foreground.
+				</td>
+			</tr>
+                
+			</table>
+		</div>
+	    </div>
+		<br>
+		
+		<div style="text-align: center;">
+			</br> [1] J. Liu, C. Li, Y. Ren, F. Chen, and Z. Zhao, “Diffsinger: Singing voice synthesis via shallow diffusion mechanism,” in Proceedings of the AAAI
+			conference on artificial intelligence, vol. 36, no. 10, 2022, pp. 11 020–11 028.
+			</br> [2] R. Huang, Z. Zhao, H. Liu, J. Liu, C. Cui, and Y. Ren, “Prodiff: Progressive fast diffusion model for high-quality text-to-speech,” in Proceedings of the 30th ACM International Conference on Multimedia,
+			2022, pp. 2595–2605.
+			
+			</br> [3] Y. Lee, I. Yeon, J. Nam, and J. S. Chung, “Voiceldm: Text-to-speech with environmental context,” in ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP).
+			IEEE, 2024, pp. 12 566–12 571.
+			
+			</br> [4] H. Liu, R. Huang, X. Lin, W. Xu, M. Zheng, H. Chen, J. He, and Z. Zhao, “Vit-tts: Visual text-to-speech with scalable diffusion transformer,” in Proceedings of the 2023 Conference on Empirical Methods
+			in Natural Language Processing, 2023, pp. 15 957–15 969.
+			
+		</div>
+
+		</div>
+		</div>
+
+		
+
+    
+      
+
+
+  
+</section>
+ 
